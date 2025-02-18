@@ -1,0 +1,29 @@
+# Ignore system files
+*.swp
+.DS_Store
+*.log
+*.tmp
+
+# Ignore Bundler dependencies
+/vendor/bundle
+
+# Ignore local Ruby environment settings
+/.bundle
+/.env
+
+# Ignore cached and temp files
+/tmp
+/log
+/node_modules
+/public/assets
+
+# Ignore database files
+*.sqlite3
+*.sqlite3-journal
+
+# Ignore credentials (if applicable)
+config/secrets.yml
+.env
+
+# Ignore Git-specific files
+.git/
