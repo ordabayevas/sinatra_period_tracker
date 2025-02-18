@@ -1,0 +1,20 @@
+<% 5.times do |idx_1| %>
+  <tr>
+  <% 7.times do |idx_2| %>
+    <% cell_num = idx_1 * 7 + idx_2 %>
+    <td>
+    <%= @display_month[cell_num] %>
+      <% if @display_month[cell_num] != ' ' %>
+        <% if session[:cycles].key?("#{@year}-#{@month}") && session[:cycles]["#{@year}-#{@month}"].key?("#{@year}-#{@month}-#{@display_month[cell_num]}") %>
+          <input type="checkbox" id="period_<%= cell_num %>" name="period[]" value="<%= @year %>-<%= @month %>-<%= @display_month[cell_num] %>" checked="yes">
+        <% else %>
+          <input type="checkbox" id="period_<%= cell_num %>" name="period[]" value="<%= @year %>-<%= @month %>-<%= @display_month[cell_num] %>">
+        <% end %>
+      <% end %>
+    </td>
+  <% end %>
+  </tr>
+<% end %>
+
+
+    

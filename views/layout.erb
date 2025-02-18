@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>Calendar</title>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/app.css">
+  </head>
+  <body>
+    <% if session[:message] %>
+      <p class="message"><%= session.delete(:message) %></p>
+    <% end %>
+
+    <div class="nav-buttons">
+      <a href="/<%= @prev_year %>/<%= @prev_month %>" class="nav-btn prev-btn">Previous Month</a>
+      <a href="/<%= @next_year %>/<%= @next_month %>" class="nav-btn next-btn">Next Month</a>
+    </div>
+
+    <div class="calendar-header">
+      <h3><%= @month_name %> <%= @year %></h3>
+    </div>
+
+    <form action="/submit" method="post" class="submit-button">
+      <table border="1" cellspacing="0" cellpadding="5">
+        <thead>
+          <tr>
+            <th>Sun</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Week  -->
+          <%= yield %> <!-- This will render content from index.erb -->
+        </tbody>
+      </table>
+      <button type="submit">Submit</button>
+    </form>
+    <div>
+  <% if session[:user] %>
+    <form method="post" action="/users/signout">
+      <p class="user-status">
+        Signed in as <%= session[:user] %>.
+        <button type="submit">Sign Out</button>
+      </p>
+    </form>
+  <% else %>
+    <p class="user-status"><a href="/users/signin">Sign In</a></p>
+  <% end %>
+</div>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+.nav-buttons {
+  text-align: center; /* centers the buttons within the container */
+  margin-bottom: 20px;
+}
+
+.nav-btn {
+  display: inline-block;       /* ensures they are inline */
+  padding: 10px 20px;          /* button padding */
+  margin: 0 10px;              /* spacing between buttons */
+  font-size: 16px;
+  font-weight: bold;
+  color: #ff69b4;
+  text-decoration: none;
+  border: 1px solid #ff69b4;;
+  background-color: #f9f5f7;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: #e0e0e0;
+}
+
+/* Add a left arrow before the Previous Month button */
+.prev-btn::before {
+  content: "\2190"; /* Unicode for left arrow */
+  margin-right: 8px;
+}
+
+/* Add a right arrow after the Next Month button */
+.next-btn::after {
+  content: "\2192"; /* Unicode for right arrow */
+  margin-left: 8px;
+}
+
+table {
+  margin: 20px auto;           /* centers the table horizontally */
+  border-collapse: collapse;   /* collapse borders for a cleaner look */
+  font-family: 'Pacifico', cursive; /* use a handwriting font */
+  color: #ff69b4;              /* pink text color */
+  width: 80%;                  /* adjust as needed */
+}
+
+th, td {
+  border: 1px solid #ff69b4;   /* pink borders */
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #ffe4e1;   /* light pink background for headers */
+}
+
+.calendar-header {
+  text-align: center;          /* centers the header */
+  margin-bottom: 20px;         /* space between header and calendar */
+  padding: 10px 0;             /* vertical padding for a balanced look */
+}
+
+.calendar-header h3 {
+  font-family: 'Pacifico', cursive; /* uses Ubuntu font */
+  font-size: 1.5em;                    /* larger font size for emphasis */
+  color: #ff69b4;                      /* pink text color */
+  margin: 0;                           /* removes default margins */
+  padding: 0;                          /* removes extra padding */
+  letter-spacing: 1px;                 /* optional, for better legibility */
+}
+
+.message {
+  padding: 10px;
+  background: #ff69b4;
+}
+
+.user-status {
+  font-size: 1.1em;
+  font-family: 'Pacifico', cursive; /* use a handwriting font */
+  color: #ff69b4;   
+}
+
